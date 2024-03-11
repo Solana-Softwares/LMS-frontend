@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           <div className="container">
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
-                <h1 className="md:text-[90px] max-sm:text-[50px] text-center text-white font-bold flex justify-center pt-40">
+                <h1 className="md:text-[90px] max-sm:text-[50px] text-center text-white font-bold flex justify-center pt-40 max-sm:ml-12">
                   {props.data ? props.data.title : "Loading"}
                   <span></span>
                 </h1>
@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 </p>
                 <a
                   href="/enrolled"
-                  className="bg-purple-600 flex text-xl justify-center rounded-full w-[20%] max-sm:w-[30%] text-center text-white max-sm:py-1 py-2 font-semibold mt-6 mx-auto"
+                  className="bg-purple-600 max-sm:ml-[138px] flex text-xl justify-center rounded-full w-[20%] max-sm:w-[40%] text-center text-white max-sm:py-1 py-2 font-semibold mt-6 mx-auto"
                 >
                   Get Started
                 </a>{" "}

@@ -165,8 +165,8 @@ const Profile = styled.div<ProfileProps>`
   transition: all 0.3s ease;
 
   img {
-    width: 4rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 1rem;
     border-radius: 50%;
     cursor: pointer;
 
