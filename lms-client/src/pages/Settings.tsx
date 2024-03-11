@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import NavMenu from "../components/Sidebar";
 import TopBar from "../components/Topbar";
 import { FaBars } from "react-icons/fa";

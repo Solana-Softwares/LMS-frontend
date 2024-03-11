@@ -246,8 +246,7 @@ const Sidebar: React.FC = () => {
         <SlickBar clicked={click}>
           <Item
             onClick={() => setClick(false)}
-            exact
-            activeClassName="active"
+            className="active"
             to="/"
           >
             <img src={Home} alt="Home" />
@@ -255,32 +254,32 @@ const Sidebar: React.FC = () => {
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
-            to="/team"
+            className="active"
+            to="/"
           >
             <img src={Team} alt="Team" />
             <Text clicked={click}>Team</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
-            to="/calender"
+            className="active"
+            to="/"
           >
             <img src={Calender} alt="Calender" />
             <Text clicked={click}>Events</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
-            to="/documents"
+            className="active"
+            to="/"
           >
             <img src={Documents} alt="Documents" />
             <Text clicked={click}>About</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
-            to="/projects"
+            className="active"
+            to="/"
           >
             <img src={Projects} alt="Projects" />
             <Text clicked={click}>Testimonials</Text>

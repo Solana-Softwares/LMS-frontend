@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           <div className="container">
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
-                <h1 className="md:text-[90px] max-sm:text-[50px] text-center text-white font-bold flex justify-center pt-40 max-sm:ml-12">
+                <h1 className="md:text-[90px] max-sm:text-[50px] text-center text-white font-bold flex justify-center pt-40 max-sm:pt-52 max-sm:ml-12">
                   {props.data ? props.data.title : "Loading"}
                   <span></span>
                 </h1>

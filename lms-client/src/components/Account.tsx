@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom"; // Make sure to install react-router-dom if not already installed
 import { FaUserEdit, FaLanguage, FaPalette, FaLifeRing, FaSignOutAlt, FaChevronRight } from "react-icons/fa";
 
