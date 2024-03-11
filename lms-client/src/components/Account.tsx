@@ -38,7 +38,7 @@ function Account() {
         <FaChevronRight className="h-4" />
       </Link>
 
-      <Link to="/logout" className="flex justify-between items-center w-[70%] mx-auto border border-white p-2 px-5 rounded-full">
+      <Link to="/" className="flex justify-between items-center w-[70%] mx-auto border border-white p-2 px-5 rounded-full">
         <div className="flex items-center">
           <FaSignOutAlt className="mr-2" />
           <span>Logout</span>

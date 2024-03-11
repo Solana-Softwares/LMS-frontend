@@ -1,21 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Teaching from "./pages/Teaching";
-import Calendar from "./pages/Calendar";
-import { ThemeProvider, createTheme } from "@mui/material";
-import Achievements from "./pages/Achievements";
-import Notifications from "./pages/Notifications";
-import Settings from "./pages/Settings";
-import LandingApp from "../src/pages/landingpage/src/App.jsx";
-import Home from "./pages/Enrolled.js";
-
-const theme = createTheme();
+import { Route, Routes, useLocation } from "react-router-dom";
+import Teaching from "./pages/Teaching.tsx";
+import Calendar from "./pages/Calendar.tsx";
+import Achievements from "./pages/Achievements.tsx";
+import Notifications from "./pages/Notifications.tsx";
+import Settings from "./pages/Settings.tsx";
+import LandingApp from "../src/pages/landingpage/src/App.tsx";
+import Home from "./pages/Enrolled.tsx";
 
 const App: React.FC = () => {
+
+  const location = useLocation();
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<LandingApp />} />
           <Route path="/enrolled" element={<Home />} />
           <Route path="/teaching" element={<Teaching />} />
@@ -24,8 +21,6 @@ const App: React.FC = () => {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
-      </Router>
-    </ThemeProvider>
   );
 };
 
