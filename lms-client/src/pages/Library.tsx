@@ -3,7 +3,7 @@ import NavMenu from "../components/Sidebar";
 import TopBar from "../components/Topbar";
 import { FaBars } from "react-icons/fa";
 
-function Teaching() {
+function Library() {
   const [showSideSection, setShowSideSection] = useState(true);
 
   const toggleSideSection = () => {
@@ -71,11 +71,8 @@ function Teaching() {
             <TopBar toggleSideSection={toggleSideSection} />
           </div>
           <div className="bg-[#2b2b2b] h-[90%]">
-            <div className="text-white rounded-full bg-purple-500 w-36 py-1 text-center mx-auto mt-4 font-semibold">
-              <button>Create Classroom</button>
-            </div>
             <div className="text-white mx-auto flex justify-center pt-52 text-xl">
-              You are managing 0 classrooms
+              No content to display
             </div>
           </div>
         </div>
@@ -84,4 +81,4 @@ function Teaching() {
   );
 }
 
-export default Teaching;
+export default Library;

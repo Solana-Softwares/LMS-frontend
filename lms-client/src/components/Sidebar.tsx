@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
   FaGraduationCap,
-  FaStar,
   FaUsers,
-  FaCalendarAlt,
-  FaBell,
-  FaCog,
+  FaUser,
+  FaHome,
+  FaChartBar,
+  FaBook,
 } from "react-icons/fa";
 
 interface NavItemProps {
@@ -21,20 +21,20 @@ const NavItem: React.FC<NavItemProps> = ({ name, icon, onClick, isActive }) => {
     route = "/enrolled";
   } else if (name === "Teaching") {
     route = "/teaching";
-  } else if (name === "Achievements") {
-    route = "/achievements";
-  } else if (name === "Calendar") {
-    route = "/calendar";
-  } else if (name === "Notifications") {
-    route = "/notifications";
-  } else if (name === "Settings") {
-    route = "/settings";
+  } else if (name === "Leaderboard") {
+    route = "/leaderboard";
+  } else if (name === "Library") {
+    route = "/library";
+  } else if (name === "Home") {
+    route = "/home";
+  } else if (name === "You") {
+    route = "/you";
   }
 
   return (
     <a href={route}>
       <li
-        className={`w-full h-[50px] rounded-md hover:bg-[#268bdd] cursor-pointer mb-3 flex items-center pl-7 pt-5 pb-6 ${
+        className={`w-full h-[50px] rounded-md hover:bg-[#268bdd] cursor-pointer mb-3 flex items-center pl-7 pt-8 pb-6 ${
           isActive ? "bg-[#268bdd] text-black" : "text-white"
         }`}
         onClick={onClick}
@@ -62,6 +62,12 @@ const NavMenu: React.FC = () => {
   return (
     <ul>
       <NavItem
+        name="Home"
+        icon={<FaHome />}
+        onClick={() => handleItemClick("Home")}
+        isActive={activeItem === "Home"}
+      />
+      <NavItem
         name="Enrolled"
         icon={<FaGraduationCap />}
         onClick={() => handleItemClick("Enrolled")}
@@ -74,28 +80,22 @@ const NavMenu: React.FC = () => {
         isActive={activeItem === "Teaching"}
       />
       <NavItem
-        name="Achievements"
-        icon={<FaStar />}
-        onClick={() => handleItemClick("Achievements")}
-        isActive={activeItem === "Achievements"}
+        name="Leaderboard"
+        icon={<FaChartBar />}
+        onClick={() => handleItemClick("Leaderboard")}
+        isActive={activeItem === "Leaderboard"}
       />
       <NavItem
-        name="Calendar"
-        icon={<FaCalendarAlt />}
-        onClick={() => handleItemClick("Calendar")}
-        isActive={activeItem === "Calendar"}
+        name="Library"
+        icon={<FaBook />}
+        onClick={() => handleItemClick("Library")}
+        isActive={activeItem === "Library"}
       />
       <NavItem
-        name="Notifications"
-        icon={<FaBell />}
-        onClick={() => handleItemClick("Notifications")}
-        isActive={activeItem === "Notifications"}
-      />
-      <NavItem
-        name="Settings"
-        icon={<FaCog />}
-        onClick={() => handleItemClick("Settings")}
-        isActive={activeItem === "Settings"}
+        name="You"
+        icon={<FaUser />}
+        onClick={() => handleItemClick("You")}
+        isActive={activeItem === "You"}
       />
     </ul>
   );

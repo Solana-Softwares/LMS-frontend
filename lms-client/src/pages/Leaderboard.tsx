@@ -2,9 +2,15 @@ import { useState, useEffect } from "react";
 import NavMenu from "../components/Sidebar";
 import TopBar from "../components/Topbar";
 import { FaBars } from "react-icons/fa";
+import EducatorsLe from "../components/EducatorsLe";
+import InstructorsLe from "../components/InstructorsLe";
+import StudentsLe from "../components/StudentsLe";
 
-function Teaching() {
+type TabName = "educators" | "instructors" | "students";
+
+function Leaderboard() {
   const [showSideSection, setShowSideSection] = useState(true);
+  const [activeTab, setActiveTab] = useState<TabName>("educators");
 
   const toggleSideSection = () => {
     setShowSideSection(!showSideSection);
@@ -13,6 +19,41 @@ function Teaching() {
   const closeSideSection = () => {
     if (window.innerWidth < 768 && showSideSection) {
       setShowSideSection(false);
+    }
+  };
+
+  const handleTabClick = (tabName: TabName) => {
+    setActiveTab(tabName);
+  };
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "educators":
+        return (
+          <div className="h-full bg-[#2b2b2b] text-white">
+            <div>
+              <EducatorsLe />
+            </div>
+          </div>
+        );
+      case "instructors":
+        return (
+          <div className="h-full bg-[#2b2b2b] text-white">
+            <div>
+              <InstructorsLe />
+            </div>
+          </div>
+        );
+      case "students":
+        return (
+          <div className="h-full bg-[#2b2b2b] text-white">
+            <div>
+              <StudentsLe />
+            </div>
+          </div>
+        );
+      default:
+        return null;
     }
   };
 
@@ -64,24 +105,46 @@ function Teaching() {
           <NavMenu />
         </div>
         {/* Main Dashboard Section */}
-        <div className="w-full flex flex-col" onClick={closeSideSection}>
+        <div className="w-full flex flex-col bg-[#2b2b2b]" onClick={closeSideSection}>
           <div className="h-[10%]">
             {" "}
             {/* Use flex to arrange top bar and main content */}
             <TopBar toggleSideSection={toggleSideSection} />
           </div>
-          <div className="bg-[#2b2b2b] h-[90%]">
-            <div className="text-white rounded-full bg-purple-500 w-36 py-1 text-center mx-auto mt-4 font-semibold">
-              <button>Create Classroom</button>
+          {/* Tabs */}
+          <div className="flex justify-around items-center bg-[#2b2b2b] text-white">
+            <div
+              className={`cursor-pointer py-2 px-4 ${
+                activeTab === "educators" ? "underline rounded-md my-1" : ""
+              }`}
+              onClick={() => handleTabClick("educators")}
+            >
+              Educators
             </div>
-            <div className="text-white mx-auto flex justify-center pt-52 text-xl">
-              You are managing 0 classrooms
+            <div
+              className={`cursor-pointer p-2 ${
+                activeTab === "instructors" ? "underline rounded-md my-1" : ""
+              }`}
+              onClick={() => handleTabClick("instructors")}
+            >
+              Instructors
+            </div>
+            <div
+              className={`cursor-pointer p-2 ${
+                activeTab === "students" ? "underline rounded-md my-1" : ""
+              }`}
+              onClick={() => handleTabClick("students")}
+            >
+              Students
             </div>
           </div>
+
+          {/* Tab Content */}
+          <div>{renderTabContent()}</div>
         </div>
       </main>
     </>
   );
 }
 
-export default Teaching;
+export default Leaderboard;

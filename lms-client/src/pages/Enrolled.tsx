@@ -3,7 +3,7 @@ import NavMenu from "../components/Sidebar";
 import TopBar from "../components/Topbar";
 import { FaBars } from "react-icons/fa";
 
-function Home() {
+function Enrolled() {
   const [showSideSection, setShowSideSection] = useState(true);
 
   const toggleSideSection = () => {
@@ -75,7 +75,7 @@ function Home() {
               <button>Join Classroom</button>
             </div>
             <div className="text-white mx-auto flex justify-center pt-52 text-xl">
-              You have enrolled in 0 classes
+              You have enrolled in 0 classrooms
             </div>
           </div>
         </div>
@@ -84,4 +84,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Enrolled;
